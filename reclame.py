@@ -4,14 +4,28 @@ def aanbieding_1(smaak,prijs,korting):
     korting=(1-korting)
     korting=prijs*korting
     print (f"Vandaag in de aanbieding: emmertje ijs (1 liter) in de smaak {smaak}, van {prijs} euro voor {korting} euro.")
-
+'''
 def inkomsten_totaal(inkomsten):
     
     totaal=sum (inkomsten)
     bedrag=sum (inkomsten)*0.09
     
     return(f"Het totaal van alle inkomsten van deze week is {totaal} euro, waarover {bedrag} euro btw betaald dient te worden.")
-print(inkomsten_totaal((220,430,125,160,205,90,345)))
+'''
+#goede antwoord van de docent
+def inkomsten_totaal(inkomsten, btw):
+    #initialiseer het totaal op 0
+    totaal=0
+    #tel alle bedragen in de ínkomsten lijst op
+    for bedrag in inkomsten:
+        totaal+=bedrag
+    #Bereken het btw-bedrag over het totaal
+    btw_bedrag=totaal*btw
+    #Maak een string met het totaal en het btw-bedrag
+    uitvoer=(f"Het totaal van alle inkomstne van deze week is {totaal} euro, waarover {btw_bedrag} euro btw betaakd dient te worden.")
+    #Retourneer de utivoerstring
+    return uitvoer
+print(inkomsten_totaal((220,430,125,160,205,90,345),.09))
 
 def laag_en_hoog(mijn_lijst):
     
